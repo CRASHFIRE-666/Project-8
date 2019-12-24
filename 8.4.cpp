@@ -1,24 +1,36 @@
 #include <iostream>
 using namespace std;
+#include <cmath>
 int main()
 {
-    float x,y;
-    cin>>x>>y;
-    if (x>0) {
-        if (y>0){
-            cout<<"1"<<endl;
+    setlocale(LC_ALL, "Russian');
+    int x, y;
+    
+    cin >> x >> y;
+    
+    if (x != 0 && y != 0)
+    {
+        if (y > 0 && x > 0)
+        {
+            cout << 1 << endl;
         }
-        else {
-            cout<<"4"<<endl;
+        else if (y > 0 && x < 0)
+        {
+            cout << 2 << endl;
+        }
+        else if (y < 0 && x < 0)
+        {
+            cout << 3 << endl;
+        }
+        else if (y < 0 && x > 0)
+        {
+            cout << 4 << endl;
         }
     }
-    else {
-        if (y>0) {
-            cout<<"2"<<endl;
-        }
-        else {
-            cout<<"3"<<endl;
-        }
+    else
+    {
+        cout << "НЕВЕРНОЕ ЗНАЧЕНИЕ" << endl;
     }
+    
     return 0;
 }
