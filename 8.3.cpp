@@ -1,19 +1,29 @@
 #include <iostream>
-#include <math.h>
 using namespace std;
+#include <cmath>
 int main()
 {
     setlocale(LC_ALL, "Russian");
-    int ax,ay,bx,by,cx,cy,lb,lc;
-    cout<<"Введите координаты точек";
-    cin>>ax>>ay>>bx>>by>>cx>>cy;
-    lb=sqrt(pow(ax-bx,2)+pow(ay-by,2));
-    lc=sqrt(pow(ax-cx,2)+pow(ay-cy,2));
-    if (lb>lc) {
-        cout<<"c="<<lc<<endl;
+    int a, b, c, ab, ac;
+    
+    cin >> a >> b >> c;
+    
+    ab = abs(a - b);
+    ac = abs(a - c);
+    
+    if (ab < ac)
+    {
+        cout << b << endl;
     }
-    else {
-        cout<<"b="<<lb<<endl;
+    else if (ac < ab)
+    {
+        cout << c << endl;
     }
+    else
+    {
+        cout << "Они на одинаковой дистанции" << endl;
+    }
+    
+    
     return 0;
 }
