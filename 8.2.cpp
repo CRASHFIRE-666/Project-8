@@ -1,25 +1,25 @@
 #include <iostream>
 using namespace std;
+#include <cmath>
 int main()
 {
-    int a,b,c,sum;
-    cin>>a>>b>>c;
-    if (a>b) {
-        if (b>c) {
-            sum=a+b;
-        }
-        else {
-            sum=a+c;
-        }
-    }
-    else {
-        if (a>c) {
-            sum=a+b;
-        }
-        else {
-            sum=b+c;
-        }
-    }
-    cout<<sum<<endl;
+    int a, b, c, min;
+    
+    cin >> a >> b >> c;
+    
+   if (c <= a && c <= b)
+   {
+       min = c;
+   }
+   else if (b <= a && b <= c)
+   {
+       min = b;
+   }
+   else
+   {
+       min = a;
+   }
+
+    cout << a + b + c - min << endl;
     return 0;
 }
