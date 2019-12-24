@@ -1,24 +1,30 @@
 #include <iostream>
 using namespace std;
+#include <cmath>
 int main()
 {
-    setlocale(LC_ALL, "Russian");
-    cout<<"Введите числа"<<endl;
-    int a,b,max;
-    cin>>a>>b;
-    if (a>b) {
-        max=a;
+    int a, b;
+    
+    cin >> a >> b;
+    
+    if (a != b)
+    {
+        if (a > b)
+        {
+            b = a;
+        }
+        else
+        {
+            a = b;
+        }
     }
-    else {
-        max=b;
+    else
+    {
+        a = 0;
+        b = 0;
     }
-    if (a==b) {
-        a=0;
-        b=0;
-    }
-    else {
-        a=max;
-        b=max;
-    }
-    cout<<"А="<<a<<", В="<<b<<endl;
+    
+    cout << a << " " << b << endl;
+    
+    return 0;
 }
