@@ -1,37 +1,44 @@
 #include <iostream>
 using namespace std;
+#include <cmath>
 int main()
 {
     setlocale(LC_ALL, "Russian");
-    int a,a1,k;
-    cin>>a;
-    a1=a;
-    k=0;
-    while (a1>0)
+    int x;
+    
+    cin >> x;
+    
+    if (x > 0 && x < 1000)
     {
-        a1=a1/10;
-        k=k+1;
-    }
-    if (a%2==0)
-    {
-        cout<<"Чётное ";
+        if (x % 1000 >= 100 && x % 2 == 0)
+        {
+            cout << "Трехзначное четное число" << endl;
+        }
+        else if (x % 1000 >= 100 && x % 2 != 0)
+        {
+            cout << "Трехзначное нечетное число" << endl;
+        }
+        else if (x % 1000 < 100 && x % 1000 >=10 && x % 2 == 0 )
+        {
+            cout << "Двухзначное четное число" << endl;
+        }
+        else if (x % 1000 < 100 && x % 1000 >=10 && x % 2 != 0 )
+        {
+            cout << "Двухзначное нечетное число" << endl;
+        }
+        else if (x % 1000 < 100 && x % 1000 >=10 && x % 2 == 0 )
+        {
+            cout << "Однозначное четно число" << endl;
+        }
+        else if (x % 1000 < 100 && x % 1000 >=10 && x % 2 != 0 )
+        {
+            cout << "Однозначное нечетное число" << endl;
+        }
     }
     else
     {
-        cout<<"Нечётное ";
+        cout << "НЕВЕРНОЕ ЗНАЧЕНИЕ" << endl;
     }
-    if (k==1)
-    {
-        cout<<"однозначное ";
-    }
-    else if (k==2)
-    {
-        cout<<"двузначное ";
-    }
-    else if (k==3)
-    {
-        cout<<"трёхначное ";
-    }
-    cout<<"число";
+    
     return 0;
 }
